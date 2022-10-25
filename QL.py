@@ -58,7 +58,7 @@ class Env:
     def __init__(self,state_space) -> None:
         super(Env,self).__init__()    
         self.state = state_space[0]
-        self.rewards = [-1, -0.5, 0, 0.1, 0.5, 0.1, -0.2, 1, 0.5, 0.1]  # reward
+        self.rewards = [-1, -0.5, -0.5, -0.5, -0.5, 1, -0.2, 0, 0, 0]  # reward
         self.target = 5
 
     def reset(self):
@@ -90,7 +90,7 @@ class Env:
         v_map[self.target] = 'x'
         v_map[self.state] = 'A'
         print('\r',v_map,end=' ')
-        time.sleep(0.001)
+        time.sleep(0.01)
 
 
 # RL structure (Generic)
