@@ -58,6 +58,7 @@ class Env:
     def __init__(self,state_space) -> None:
         super(Env,self).__init__()    
         self.state = state_space[0]
+        # self.rewards = [-1, -0.5, 0, 0.8, -0.5, 1, -0.2, 1, 0.5, 0.1] # A improper case, reward not match target cause exploration-exploitation
         self.rewards = [-1, -0.5, -0.5, -0.5, -0.5, 1, -0.2, 0, 0, 0]  # reward
         self.target = 5
 
@@ -109,4 +110,7 @@ for i in range(num_episodes):
         if done:
             break
     print('\n----- Total cost:',RL_count,' Times-----')
+# For using a pretrained model: 
+# 1. load Q table (or other model)
+# 2. set init state, then run code after line 'while True:' to get an agent plan
     
