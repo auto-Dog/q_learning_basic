@@ -36,8 +36,8 @@ class Robot:
             valid_actions -= set(['left'])  
         return list(valid_actions)
 
-    def choose_action(self,state,reward):
-        if(self.action_record is not None):
+    def choose_action(self,state,reward,count):
+        if(count!=0):
         # 3. update Q_table (In this code style, the last try will not be learned)
             self.Q_function(state,self.action_record,reward)
 
@@ -102,7 +102,7 @@ for i in range(num_episodes):
     state = env.reset()
     RL_count = 0
     while True:
-        action = agent.choose_action(state,reward)
+        action = agent.choose_action(state,reward,RL_count)
         state, reward, done = env.step(action)
         env.render()
         RL_count += 1
