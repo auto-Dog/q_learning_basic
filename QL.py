@@ -43,7 +43,7 @@ class Robot:
 
         global action_space,state_space
         # 1. choose a from s using policy derived from Q (ε-greedy)
-        if (random.uniform(0, 1) > self.epsilon) or ((self.q_table.loc[state] == 0).all()):  # 探索
+        if (random.uniform(0, 1) > self.epsilon) or ((self.q_table.loc[state] == 0).all()):  
             current_action = random.choice(self.get_valid_actions(state))
         else:
             current_action = self.q_table.loc[state].idxmax()
@@ -58,7 +58,7 @@ class Env:
     def __init__(self,state_space) -> None:
         super(Env,self).__init__()    
         self.state = state_space[0]
-        self.rewards = [-1, -0.5, 0, 0.1, 0.5, 0.1, -0.2, 1, 0.5, 0.1]  # 奖励集
+        self.rewards = [-1, -0.5, 0, 0.1, 0.5, 0.1, -0.2, 1, 0.5, 0.1]  # reward
         self.target = 5
 
     def reset(self):
