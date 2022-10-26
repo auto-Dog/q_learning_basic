@@ -1,5 +1,7 @@
 # q_learning_basic
 
+_This is a `python` project for experiment on RL and Q-learning_
+
 [o o <-(o)-> o o x] 
 Target: control the robot <-( )-> until it is on 'x'
 
