@@ -7,7 +7,7 @@ import time
 action_space = ['left','right']     # cause state change
 state_space = range(10)
 # state: a value in state_space, is not the environment itself
-# Q-map: state | action
+# Q-map: state(index) | action0 score | action1 score
 
 # Q-function based RL, some code from https://blog.csdn.net/zjl0409/article/details/121867048
 class Robot:
