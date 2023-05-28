@@ -6,7 +6,8 @@ import time
 # This is a version thet fit the standard framework of RL, pseudocode seen at https://www.eecs.tufts.edu/~mguama01/post/q-learning/qlearning.png
 action_space = ['left','right']     # cause state change
 state_space = range(10)
-
+# state: a value in state_space, is not the environment itself
+# Q-map: state | action
 
 # Q-function based RL, some code from https://blog.csdn.net/zjl0409/article/details/121867048
 class Robot:
